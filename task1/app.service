@@ -1,0 +1,12 @@
+[Unit]
+Description=Python App
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/python3 /root/task/python-app/app.py
+Restart=always
+StandardOutput=file:/var/log/python-app.log
+StandardError=file:/var/log/python-app.log
+
+[Install]
+WantedBy=multi-user.target
